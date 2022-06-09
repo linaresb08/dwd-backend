@@ -15,7 +15,7 @@ dwd-backend | This repository was created as a technical test for the Asimov Con
 1. Clone the repository inside that directory
 2. Install the dependencies | command: `npm install`
 3. Start MongoDB | command: `sudo systemctl start mongod`
-4. Start the API | command: `npm start` to run the server
+4. Start the API | command: `npm run dev` to run the server
 
 
 ## Repository dependency
