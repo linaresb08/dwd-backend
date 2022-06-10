@@ -13,7 +13,7 @@ const port = process.env.PORT || 3900;
 
 mongoose.Promise = global.Promise;
 
-mongoose.connect(process.env.DB_URL, { useNewUrlParser: true })
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true })
   .then(() => {
     console.log('MongoDB database connected successfully!')
 
