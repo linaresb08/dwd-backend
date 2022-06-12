@@ -12,7 +12,7 @@ var controller = {
     // * Validate data (With Validator)
     try {
       var validate_date = !validator.isEmpty(params.date);
-      var validate_startTime = !validator.isEmpty(params.startTime);
+      var validate_startTime = params.startTime > 8 && params.startTime < 18 ? true : false;
       var validate_email = validator.isEmail(params.email);
     } catch (err) {
       return res.status(200).send({
@@ -68,7 +68,7 @@ var controller = {
     }
 
     // * Find all appointments
-    query.sort('date').exec((err, appointments) => {
+    query.sort({'date': 1, 'startTime': 1}).exec((err, appointments) => {
 
       if(err) {
         return res.status(500).send({
@@ -130,7 +130,7 @@ var controller = {
     // * Validate data (With Validator)
     try {
       var validate_date = !validator.isEmpty(params.date);
-      var validate_startTime = !validator.isEmpty(params.startTime);
+      var validate_startTime = params.startTime > 8 && params.startTime < 18 ? true : false;
       var validate_email = validator.isEmail(params.email);
     } catch (err) {
       return res.status(200).send({
